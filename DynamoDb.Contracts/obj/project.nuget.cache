@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "MXd3eUy6eBgwdseTFDu7l9+YHsHp7BNpgjhIWuzsooiDpeutkjxEkZBAam2QYv+RUCCRYVKEypNAqULUmrtIZA==",
+  "success": true,
+  "projectFilePath": "C:\\DEV\\Laboratorios_AWS\\DynamoDB.Products\\DynamoDb.Contracts\\DynamoDb.Contracts.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sergio\\.nuget\\packages\\awssdk.core\\3.7.107.6\\awssdk.core.3.7.107.6.nupkg.sha512",
+    "C:\\Users\\Sergio\\.nuget\\packages\\awssdk.dynamodbv2\\3.7.103.21\\awssdk.dynamodbv2.3.7.103.21.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,60 @@
+﻿@model DynamoDb.Contracts.ProductViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a asp-controller="Products" asp-action="Create" class="btn btn-primary my-2 float-md-right">Add Product</a>
+<table class="table">
+    <thead>
+        <tr class="mx-auto">
+            <td>
+                <form class="form" method="get" asp-controller="Products" asp-action="Index">
+                    <div class="input-group mb-3">
+                        <input type="text" name="Name" class="form-control"
+                               placeholder="Name" aria-label="Name" aria-describedby="button-addon2" />
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+                    </div>
+                </form>
+            </td>
+            @if (Model.ResultsType == DynamoDb.Contracts.ResultsType.Search)
+            {
+                <td class="py-md-3">
+                    <a class="py-4 stretched-link" asp-controller="Products" asp-action="Index">Clear</a>
+                </td>
+            }
+        </tr>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Stock</th>
+            <th>Price</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (DynamoDb.Contracts.Product row in Model.Products)
+        {
+            <tr>
+                <td>@row.Id</td>
+                <td>@row.Name</td>
+                <td>@row.Stock</td>
+                <td>@row.Price €</td>
+                <td><a asp-controller="Products" asp-action="AddProvider" asp-route-productId="@row.Id" class="btn btn-secondary btn-sm">Providers</a></td>
+                <td>
+                    <a asp-controller="Products" asp-action="Edit" asp-route-productId="@row.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-controller="Products" asp-action="Delete" asp-route-productId="@row.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+
+        @if (Model == null || Model.Products.Count() == 0)
+        {
+            <tr>
+                <td colspan="6">No records found</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,86 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "DynamoDb.Products/1.0.0": {
+        "dependencies": {
+          "DynamoDb.Contracts": "1.0.0",
+          "DynamoDb.Core": "1.0.0"
+        },
+        "runtime": {
+          "DynamoDb.Products.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.7.107.6": {
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.107.6"
+          }
+        }
+      },
+      "AWSSDK.DynamoDBv2/3.7.103.21": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.107.6"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.103.21"
+          }
+        }
+      },
+      "DynamoDb.Contracts/1.0.0": {
+        "dependencies": {
+          "AWSSDK.DynamoDBv2": "3.7.103.21"
+        },
+        "runtime": {
+          "DynamoDb.Contracts.dll": {}
+        }
+      },
+      "DynamoDb.Core/1.0.0": {
+        "dependencies": {
+          "DynamoDb.Contracts": "1.0.0"
+        },
+        "runtime": {
+          "DynamoDb.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DynamoDb.Products/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AWSSDK.Core/3.7.107.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sHsEWKLrfe6nEa78wQ8gprLE7XiBTjEubTImsQ0A0DX25dIuD2mlJgy15N52E/xEP97sVtHoPfUFzmEb0YeQDA==",
+      "path": "awssdk.core/3.7.107.6",
+      "hashPath": "awssdk.core.3.7.107.6.nupkg.sha512"
+    },
+    "AWSSDK.DynamoDBv2/3.7.103.21": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XmE3L/o3HAN9EPwBhVzKHbILlRDMPf9wwW076+XdwM/qWsJILmIr29Y/Ev2sNg32Bg3FJHzK2oHDl6QFI29SIA==",
+      "path": "awssdk.dynamodbv2/3.7.103.21",
+      "hashPath": "awssdk.dynamodbv2.3.7.103.21.nupkg.sha512"
+    },
+    "DynamoDb.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DynamoDb.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

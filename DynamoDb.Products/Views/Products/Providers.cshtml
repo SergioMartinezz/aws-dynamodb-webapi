@@ -1,0 +1,64 @@
+﻿@model DynamoDb.Contracts.ProductInputModel
+
+@{
+    string productId = "";
+    if (ViewBag.ProductId != null)
+        productId = ViewBag.ProductId.ToString();
+
+    string action = "";
+
+    if (Model != null && Model.InputType == DynamoDb.Contracts.InputType.AddProvider)
+    {
+        action = "AddProvider";
+    }
+    else if (Model != null && Model.InputType == DynamoDb.Contracts.InputType.DeleteProvider)
+    {
+        action = "DeleteProvider";
+    }
+}
+
+<form method="post" asp-controller="Products" asp-route-productoId="@productId" asp-action="@action">
+    <div class="form-floating">
+        <input class="form-control" asp-for="Name" type="text" disabled />
+        <label class=" form-label" class=" form-label" asp-for="Name"></label>
+    </div>
+    <div class=" form-floating">
+        <input class="form-control" asp-for="Stock" type="text" disabled />
+        <label asp-for="Stock"></label>
+    </div>
+    <div class=" form-floating">
+        <input class="form-control" asp-for="Price" type="text" disabled />
+        <label class=" form-label" asp-for="Price"></label>
+    </div>
+
+    @if (action != "Edit" && action != "RemoveProvider")
+    {
+        <div class=" form-floating">
+            <input class="form-control" asp-for="Providers" type="text" />
+            <label class=" form-label" asp-for="Providers">Add Provider</label>
+
+        </div>
+    }
+
+    @if (action == "RemoveProvider" || action == "AddProvider")
+    {
+        <div class="form-group mt-3 col-12 col-lg-3">
+            <label>Delete Provider</label>
+            <ul class="list-group">
+                @foreach (var pr in ViewData["Providers"] as IEnumerable<string>)
+                {
+                    <li class="list-group-item">
+                        @pr <a asp-controller="Products" asp-action="DeleteProvider"
+                               asp-route-productoId="@productId" asp-route-provider="@pr"
+                               class="btn btn-outline-danger ms-5"> Delete</a>
+                    </li>
+
+                }
+            </ul>
+        </div>
+    }
+
+    
+
+    <button class="btn btn-primary mt-3" type="submit">Save</button>
+</form>

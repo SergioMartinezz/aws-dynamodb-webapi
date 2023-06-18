@@ -1,0 +1,12 @@
+C:\DEV\Laboratorios_AWS\DynamoDB.Products\DynamoDb.Contracts\obj\Debug\net6.0\DynamoDb.Contracts.csproj.AssemblyReference.cache
+C:\DEV\Laboratorios_AWS\DynamoDB.Products\DynamoDb.Contracts\obj\Debug\net6.0\DynamoDb.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\DEV\Laboratorios_AWS\DynamoDB.Products\DynamoDb.Contracts\obj\Debug\net6.0\DynamoDb.Contracts.AssemblyInfoInputs.cache
+C:\DEV\Laboratorios_AWS\DynamoDB.Products\DynamoDb.Contracts\obj\Debug\net6.0\DynamoDb.Contracts.AssemblyInfo.cs
+C:\DEV\Laboratorios_AWS\DynamoDB.Products\DynamoDb.Contracts\obj\Debug\net6.0\DynamoDb.Contracts.csproj.CoreCompileInputs.cache
+C:\DEV\Laboratorios_AWS\DynamoDB.Products\DynamoDb.Contracts\bin\Debug\net6.0\DynamoDb.Contracts.deps.json
+C:\DEV\Laboratorios_AWS\DynamoDB.Products\DynamoDb.Contracts\bin\Debug\net6.0\DynamoDb.Contracts.dll
+C:\DEV\Laboratorios_AWS\DynamoDB.Products\DynamoDb.Contracts\bin\Debug\net6.0\DynamoDb.Contracts.pdb
+C:\DEV\Laboratorios_AWS\DynamoDB.Products\DynamoDb.Contracts\obj\Debug\net6.0\DynamoDb.Contracts.dll
+C:\DEV\Laboratorios_AWS\DynamoDB.Products\DynamoDb.Contracts\obj\Debug\net6.0\refint\DynamoDb.Contracts.dll
+C:\DEV\Laboratorios_AWS\DynamoDB.Products\DynamoDb.Contracts\obj\Debug\net6.0\DynamoDb.Contracts.pdb
+C:\DEV\Laboratorios_AWS\DynamoDB.Products\DynamoDb.Contracts\obj\Debug\net6.0\ref\DynamoDb.Contracts.dll

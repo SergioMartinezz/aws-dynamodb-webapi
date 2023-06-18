@@ -1,0 +1,81 @@
+﻿@model DynamoDb.Contracts.ProductInputModel
+@{
+    string productId = "";
+    if (ViewBag.ProductId != null)
+        productId = ViewBag.ProductId.ToString();
+
+    string action = "";
+    Boolean ProviderAction = false;
+
+    if (Model != null && Model.InputType == DynamoDb.Contracts.InputType.Update)
+    {
+        action = "Edit";
+    }
+    else if (Model != null && Model.InputType == DynamoDb.Contracts.InputType.AddProvider)
+    {
+        action = "AddProvider";
+        ProviderAction = true;
+    }
+    else if (Model != null && Model.InputType == DynamoDb.Contracts.InputType.DeleteProvider)
+    {
+        action = "DeleteProvider";
+        ProviderAction = true;
+    }
+    else
+    {
+        action = "Create";
+    }
+}
+
+<form method="post" asp-controller="Products" asp-route-readerId="@productId" asp-action="@action">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" type="text" readonly="@ProviderAction" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Stock"></label>
+        <input class="form-control" asp-for="Stock" type="number" readonly="@ProviderAction" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input class="form-control" asp-for="Price" type="number" readonly="@ProviderAction" />
+    </div>
+    @if (action != "Edit" && action != "DeleteProvider")
+    {
+        <div class="form-group">
+            <label asp-for="Providers">Add Provider</label>
+            <input class="form-control" asp-for="Providers" type="text" />
+        </div>
+    }
+    else
+    {
+        <input asp-for="InputType" type="hidden" value="@DynamoDb.Contracts.InputType.Update" />
+    }
+    <br />
+    <button class="btn btn-primary" type="submit">Save</button>
+
+    @if (action == "DeleteProvider" || action == "AddProvider")
+    {
+        <br />
+        <br />
+        <br />
+        <div>
+            <label class="form-label">Providers</label>
+
+            <br />
+
+            <table>
+                @foreach (var pr in ViewData["Providers"] as IEnumerable<string>)
+                {
+                    <tr>
+                        <td>
+                            @pr &nbsp;&nbsp;&nbsp;&nbsp;<a asp-controller="Products" asp-action="DeleteProvider" asp-route-productId="@productId" asp-route-provider="@pr" class="text-danger text-decoration-none">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+
+            
+        </div>
+    }
+</form>
